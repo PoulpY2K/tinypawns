@@ -47,6 +47,12 @@ TagManager:
   - name: Foam
     uniqueID: 2614251221
     locked: 0
+  - name: Rock
+    uniqueID: 945273533
+    locked: 0
+  - name: Sand
+    uniqueID: 3429603757
+    locked: 0
   - name: Ground
     uniqueID: 3833291695
     locked: 0
