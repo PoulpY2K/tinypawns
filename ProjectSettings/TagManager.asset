@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Water
+    uniqueID: 3697396483
+    locked: 0
+  - name: Foam
+    uniqueID: 2614251221
+    locked: 0
+  - name: Ground
+    uniqueID: 3833291695
+    locked: 0
+  - name: Vegetation
+    uniqueID: 1006363765
+    locked: 0
