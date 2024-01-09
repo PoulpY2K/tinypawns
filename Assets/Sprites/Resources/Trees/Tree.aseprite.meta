@@ -121,7 +121,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Tree_Frame_0
     originalName: 
-    pivot: {x: 0.47747752, y: -0.080459766}
+    pivot: {x: 0.5, y: 0.1}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -141,7 +141,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Tree_Frame_1
     originalName: 
-    pivot: {x: 0.47747752, y: -0.080459766}
+    pivot: {x: 0.5, y: 0.1}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -161,7 +161,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 186}
   - name: Tree_Frame_2
     originalName: 
-    pivot: {x: 0.47272724, y: -0.080459766}
+    pivot: {x: 0.5, y: 0.1}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -181,7 +181,7 @@ ScriptedImporter:
     uvTransform: {x: 242, y: 4}
   - name: Tree_Frame_3
     originalName: 
-    pivot: {x: 0.47747752, y: -0.080459766}
+    pivot: {x: 0.5, y: 0.1}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -201,7 +201,7 @@ ScriptedImporter:
     uvTransform: {x: 123, y: 4}
   - name: Tree_Frame_4
     originalName: 
-    pivot: {x: 0.4864865, y: -0.080459766}
+    pivot: {x: 0.5, y: 0.1}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -221,7 +221,7 @@ ScriptedImporter:
     uvTransform: {x: 123, y: 186}
   - name: Tree_Frame_5
     originalName: 
-    pivot: {x: 0.5377359, y: -0.08092485}
+    pivot: {x: 0.5, y: 0.1}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -241,7 +241,7 @@ ScriptedImporter:
     uvTransform: {x: 360, y: 4}
   - name: Tree_Frame_6
     originalName: 
-    pivot: {x: 0.48623857, y: -0.081871346}
+    pivot: {x: 0.5, y: 0.1}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -357,6 +357,7 @@ ScriptedImporter:
   platformSettings:
   - name: DefaultTexturePlatform
     overridden: 0
+    ignorePlatformSupport: 0
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -368,6 +369,7 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   - name: Standalone
     overridden: 0
+    ignorePlatformSupport: 0
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1

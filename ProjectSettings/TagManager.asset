@@ -59,12 +59,6 @@ TagManager:
   - name: Ground
     uniqueID: 3833291695
     locked: 0
-  - name: Bridge
+  - name: Foreground
     uniqueID: 1771964511
-    locked: 0
-  - name: Decoration
-    uniqueID: 1006363765
-    locked: 0
-  - name: Character
-    uniqueID: 1815025965
     locked: 0
