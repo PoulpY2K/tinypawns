@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Elevator
   layers:
   - Default
   - TransparentFX
@@ -11,8 +12,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Level0
+  - Level1
   - 
   - 
   - 
@@ -41,24 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Water
-    uniqueID: 3697396483
+  - name: Level0
+    uniqueID: 3992828881
     locked: 0
-  - name: Foam
-    uniqueID: 2614251221
-    locked: 0
-  - name: Sand
-    uniqueID: 3429603757
-    locked: 0
-  - name: Shadow
-    uniqueID: 4252139725
-    locked: 0
-  - name: Rock
-    uniqueID: 945273533
-    locked: 0
-  - name: Ground
-    uniqueID: 3833291695
-    locked: 0
-  - name: Foreground
-    uniqueID: 1771964511
+  - name: Level1
+    uniqueID: 839049485
     locked: 0
