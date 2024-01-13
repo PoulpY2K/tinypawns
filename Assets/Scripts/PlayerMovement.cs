@@ -51,24 +51,19 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!col.gameObject.CompareTag("Elevator")) return;
 
-        if (col.gameObject.GetComponent<SortingGroup>().sortingLayerName == _currentLayer)
+        if (col.gameObject.GetComponent<SortingGroup>().name == _currentLayer)
         {
             _spriteRenderer.sortingLayerName = SortingLayerBaseName + (_currentLevel + 1);
+            gameObject.layer = LayerMask.NameToLayer(_spriteRenderer.sortingLayerName);
             _currentLevel++;
-            gameObject.layer = 7;
         }
         else
         {
             _spriteRenderer.sortingLayerName = SortingLayerBaseName + (_currentLevel - 1);
+            gameObject.layer = LayerMask.NameToLayer(_spriteRenderer.sortingLayerName);
             _currentLevel--;
-            gameObject.layer = 6;
         }
 
         _currentLayer = _spriteRenderer.sortingLayerName;
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        throw new NotImplementedException();
     }
 }
