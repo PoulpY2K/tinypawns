@@ -261,7 +261,7 @@ ScriptedImporter:
     uvTransform: {x: 242, y: 186}
   - name: Tree_Frame_7
     originalName: 
-    pivot: {x: 0.47222218, y: -0.53333336}
+    pivot: {x: 0.5, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
