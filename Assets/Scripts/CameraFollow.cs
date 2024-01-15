@@ -1,29 +1,26 @@
 using UnityEngine;
 
-
 public class CameraFollow : MonoBehaviour
 {
     //let camera follow target
-
     public Transform target;
     public float lerpSpeed = 1.0f;
 
-    private Vector3 offset;
-
-    private Vector3 targetPos;
+    private Vector3 _offset;
+    private Vector3 _targetPos;
 
     private void Start()
     {
-        if (target == null) return;
+        if (!target) return;
 
-        offset = transform.position - target.position;
+        _offset = transform.position - target.position;
     }
 
     private void Update()
     {
         if (!target) return;
 
-        targetPos = target.position + offset;
-        transform.position = Vector3.Lerp(transform.position, targetPos, lerpSpeed * Time.deltaTime);
+        _targetPos = target.position + _offset;
+        transform.position = Vector3.Lerp(transform.position, _targetPos, lerpSpeed * Time.deltaTime);
     }
 }
