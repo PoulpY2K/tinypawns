@@ -50,10 +50,12 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (!col.gameObject.CompareTag("Elevator")) return;
+        Debug.Log(col.gameObject.GetComponent<SortingGroup>().name);
 
-        if (col.gameObject.GetComponent<SortingGroup>().name == _currentLayer)
+        if (col.gameObject.GetComponent<SortingGroup>().sortingLayerName == _currentLayer)
         {
             _spriteRenderer.sortingLayerName = SortingLayerBaseName + (_currentLevel + 1);
+            Debug.Log(_spriteRenderer.sortingLayerName);
             gameObject.layer = LayerMask.NameToLayer(_spriteRenderer.sortingLayerName);
             _currentLevel++;
         }
