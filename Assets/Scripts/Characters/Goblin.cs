@@ -6,73 +6,73 @@ using UnityEngine;
 
 namespace Characters
 {
-    public class Goblin : MonoBehaviour, IDamageable
+    public class Goblin : MonoBehaviour
     {
-        private Animator _animator;
+        public float damage = 1f;
+        public float knockbackForce = 10f;
+        public Detection detectionZone;
+        [Range(1f, 100f)] public float moveSpeed = 15f;
+
         private Rigidbody2D _rb;
-        private Collider2D _collider;
+        private Animator _animator;
+        private SpriteRenderer _sr;
+        private Damageable _dmg;
 
-        public float Health
+        private static readonly int IsMoving = Animator.StringToHash("IsMoving");
+
+        private void Awake()
         {
-            get => health;
-            set
-            {
-                if (value < health)
-                {
-                    _animator.SetTrigger(Hit);
-                }
-
-                health = value;
-
-
-                if (health <= 0)
-                {
-                    _animator.SetTrigger(Death);
-                    Targetable = false;
-                }
-            }
-        }
-
-        public bool Targetable
-        {
-            get => targetable;
-            set
-            {
-                targetable = value;
-                //_rb.simulated = value;
-                _collider.enabled = value;
-            }
-        }
-
-        public float health = 3;
-        public bool targetable = true;
-
-        private static readonly int Hit = Animator.StringToHash("Hit");
-        private static readonly int Death = Animator.StringToHash("Death");
-
-        private void Start()
-        {
-            _animator = GetComponent<Animator>();
             _rb = GetComponent<Rigidbody2D>();
-            _collider = GetComponent<Collider2D>();
+            _animator = GetComponent<Animator>();
+            _sr = GetComponent<SpriteRenderer>();
+            _dmg = GetComponent<Damageable>();
         }
 
-        public void OnHit(float damage, Vector2 knockback)
+        private void FixedUpdate()
         {
-            Health -= damage;
+            if (_dmg.Targetable && detectionZone.detectedColliders.Count > 0)
+            {
+                var detectedObject = detectionZone.detectedColliders[0];
+                // Calcule de la direction
+                Vector2 direction = (detectedObject.transform.position - transform.position).normalized;
 
-            // Appliquer la force à l'entité
-            _rb.AddForce(knockback);
+                // Déplacement vers l'objet détecté
+                _rb.AddForce(direction * moveSpeed);
+                UpdateDirectionAnimation(direction);
+
+                if (_rb.totalForce.magnitude > 0)
+                {
+                    _animator.SetBool(IsMoving, true);
+                }
+            }
+            else
+            {
+                _animator.SetBool(IsMoving, false);
+            }
+        }
+        
+        private void UpdateDirectionAnimation(Vector2 direction)
+        {
+            _sr.flipX = direction.x switch
+            {
+                > 0 => false,
+                < 0 => true,
+                _ => _sr.flipX
+            };
         }
 
-        public void OnHit(float damage)
+        private void OnCollisionEnter2D(Collision2D col)
         {
-            Health -= damage;
-        }
+            var damageableObject = col.collider.GetComponent<IDamageable>();
 
-        public void DestroySelf()
-        {
-            Destroy(gameObject);
+            if (damageableObject != null && col.gameObject.CompareTag("Player"))
+            {
+                // Calcule la direction entre le personnage et la cible
+                var direction = (Vector2)(col.collider.transform.position - transform.position).normalized;
+                var knockback = direction * knockbackForce;
+
+                damageableObject.OnHit(damage, knockback);
+            }
         }
     }
 }

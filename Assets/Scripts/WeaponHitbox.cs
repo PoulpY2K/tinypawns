@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using Interfaces;
 using UnityEngine;
 
-public class SwordHitbox : MonoBehaviour
+public class WeaponHitbox : MonoBehaviour
 {
-    public float swordDamage = 1f;
-    public float knockbackForce = 1000f;
+    public float weaponDamage = 1f;
+    public float knockbackForce = 15f;
 
     public Collider2D hitbox;
 
@@ -15,7 +15,7 @@ public class SwordHitbox : MonoBehaviour
     {
         if (hitbox == null)
         {
-            Debug.LogError("Sword Collider is not set");
+            Debug.LogError("Weapon Collider is not set");
         }
     }
 
@@ -32,11 +32,7 @@ public class SwordHitbox : MonoBehaviour
             var direction = (Vector2)(col.transform.position - parentPosition).normalized;
             var knockback = direction * knockbackForce;
 
-            damageableObject.OnHit(swordDamage, knockback);
-        }
-        else
-        {
-            Debug.LogWarning("Collider does not implement IDamageable");
+            damageableObject.OnHit(weaponDamage, knockback);
         }
     }
 

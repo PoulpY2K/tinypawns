@@ -11,8 +11,14 @@ public class LayerTrigger : MonoBehaviour
     private void OnTriggerExit2D(Collider2D col)
     {
         col.gameObject.layer = LayerMask.NameToLayer(layer);
+        foreach (Transform tr in col.transform)
+        {
+            tr.gameObject.layer = LayerMask.NameToLayer(layer);
+        }
 
-        col.gameObject.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayer;
+        if (!col.gameObject.TryGetComponent<SpriteRenderer>(out var colSr)) return;
+
+        colSr.sortingLayerName = sortingLayer;
         var srs = col.gameObject.GetComponentsInChildren<SpriteRenderer>();
         foreach (var sr in srs)
         {
