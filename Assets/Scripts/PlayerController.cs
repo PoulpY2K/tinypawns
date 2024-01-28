@@ -6,17 +6,20 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D _rb;
     private Animator _animator;
+    private SpriteRenderer _sr;
     [Range(1f, 10f)] public float moveSpeed = 3f;
     public Vector2 forceToApply;
     public Vector2 playerInput;
     [Range(1f, 3f)] public float forceDamping = 1.2f;
 
     private static readonly int IsMoving = Animator.StringToHash("IsMoving");
+    private static readonly int Attack = Animator.StringToHash("Attack");
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _sr = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -36,5 +39,22 @@ public class PlayerController : MonoBehaviour
         }
 
         _rb.velocity = moveForce;
+
+        UpdateDirectionAnimation(moveForce);
+    }
+
+    private void UpdateDirectionAnimation(Vector2 movement)
+    {
+        _sr.flipX = movement.x switch
+        {
+            > 0 => false,
+            < 0 => true,
+            _ => _sr.flipX
+        };
+    }
+
+    private void OnFire()
+    {
+        _animator.SetTrigger(Attack);
     }
 }

@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4570258610051039613}
-  - component: {fileID: -5106877258849448166}
   - component: {fileID: 7822745119126289630}
   - component: {fileID: -1259183275419421846}
   - component: {fileID: -8381833077372393559}
   - component: {fileID: -4492252083134287827}
+  - component: {fileID: -704496355646947141}
   m_Layer: 6
-  m_Name: PF PawnBlue
+  m_Name: PF GoblinRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,22 +36,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-5106877258849448166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8851022910370282709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 492b935cae6084768a8a3aab95e71ece, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 3
-  forceToApply: {x: 0, y: 0}
-  playerInput: {x: 0, y: 0}
-  forceDamping: 1.2
 --- !u!212 &7822745119126289630
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -95,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: -302138415
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2526443156231494169, guid: cfa25a1b528b81f47a42563badedc46c, type: 3}
+  m_Sprite: {fileID: -7854916424686496257, guid: 216ee979bebc3f347b7e4ab3d22491fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -140,9 +124,9 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0000000021372983, y: 0.01792896}
-  m_Size: {x: 0.4836167, y: 0.3272443}
-  m_Direction: 1
+  m_Offset: {x: 0.027744383, y: 0.101162076}
+  m_Size: {x: 0.5391055, y: 0.65008295}
+  m_Direction: 0
 --- !u!50 &-8381833077372393559
 Rigidbody2D:
   serializedVersion: 4
@@ -156,7 +140,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -166,9 +150,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!95 &-4492252083134287827
 Animator:
@@ -180,7 +164,7 @@ Animator:
   m_GameObject: {fileID: 8851022910370282709}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9a5b18b88a66148fba17e313c3cc7ab0, type: 2}
+  m_Controller: {fileID: 9100000, guid: f45caa12b08bc4c43850751101689dd2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -192,3 +176,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-704496355646947141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8851022910370282709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1850fe703a2da5a45909cb765ddd3168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
