@@ -228,7 +228,7 @@ TextureImporter:
       213: -663314108799487433
     second: Torch_Red_74
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -302,6 +302,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -314,6 +315,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -327,8 +329,8 @@ TextureImporter:
         y: 768
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -348,8 +350,8 @@ TextureImporter:
         y: 768
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -362,15 +364,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_2
+      name: Torch_Red_10
       rect:
         serializedVersion: 2
-        x: 384
-        y: 768
+        x: 576
+        y: 576
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -383,15 +385,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_3
+      name: Torch_Red_11
       rect:
         serializedVersion: 2
-        x: 576
-        y: 768
+        x: 768
+        y: 576
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -404,15 +406,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_4
+      name: Torch_Red_12
       rect:
         serializedVersion: 2
-        x: 768
-        y: 768
+        x: 960
+        y: 576
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -425,15 +427,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_5
+      name: Torch_Red_13
       rect:
         serializedVersion: 2
-        x: 960
-        y: 768
+        x: 0
+        y: 384
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -446,15 +448,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_6
+      name: Torch_Red_14
       rect:
         serializedVersion: 2
-        x: 1152
-        y: 768
+        x: 192
+        y: 384
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -467,15 +469,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_7
+      name: Torch_Red_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 576
+        x: 384
+        y: 384
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -488,15 +490,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_8
+      name: Torch_Red_16
       rect:
         serializedVersion: 2
-        x: 192
-        y: 576
+        x: 576
+        y: 384
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -509,15 +511,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_9
+      name: Torch_Red_17
       rect:
         serializedVersion: 2
-        x: 384
-        y: 576
+        x: 768
+        y: 384
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -530,15 +532,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_10
+      name: Torch_Red_18
       rect:
         serializedVersion: 2
-        x: 576
-        y: 576
+        x: 960
+        y: 384
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -551,15 +553,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_11
+      name: Torch_Red_19
       rect:
         serializedVersion: 2
-        x: 768
-        y: 576
+        x: 0
+        y: 192
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -572,15 +574,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_12
+      name: Torch_Red_2
       rect:
         serializedVersion: 2
-        x: 960
-        y: 576
+        x: 384
+        y: 768
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -593,15 +595,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_13
+      name: Torch_Red_20
       rect:
         serializedVersion: 2
-        x: 0
-        y: 384
+        x: 192
+        y: 192
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -614,15 +616,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_14
+      name: Torch_Red_21
       rect:
         serializedVersion: 2
-        x: 192
-        y: 384
+        x: 384
+        y: 192
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -635,15 +637,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_15
+      name: Torch_Red_22
       rect:
         serializedVersion: 2
-        x: 384
-        y: 384
+        x: 576
+        y: 192
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -656,15 +658,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_16
+      name: Torch_Red_23
       rect:
         serializedVersion: 2
-        x: 576
-        y: 384
+        x: 768
+        y: 192
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -677,15 +679,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_17
+      name: Torch_Red_24
       rect:
         serializedVersion: 2
-        x: 768
-        y: 384
+        x: 960
+        y: 192
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -698,15 +700,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_18
+      name: Torch_Red_25
       rect:
         serializedVersion: 2
-        x: 960
-        y: 384
+        x: 0
+        y: 0
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -719,15 +721,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_19
+      name: Torch_Red_26
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
+        x: 192
+        y: 0
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -740,15 +742,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_20
+      name: Torch_Red_27
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
+        x: 384
+        y: 0
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -761,15 +763,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_21
+      name: Torch_Red_28
       rect:
         serializedVersion: 2
-        x: 384
-        y: 192
+        x: 576
+        y: 0
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -782,15 +784,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_22
+      name: Torch_Red_29
       rect:
         serializedVersion: 2
-        x: 576
-        y: 192
+        x: 768
+        y: 0
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -803,15 +805,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_23
+      name: Torch_Red_3
       rect:
         serializedVersion: 2
-        x: 768
-        y: 192
+        x: 576
+        y: 768
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -824,15 +826,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_24
+      name: Torch_Red_30
       rect:
         serializedVersion: 2
         x: 960
-        y: 192
+        y: 0
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -845,15 +847,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_25
+      name: Torch_Red_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 768
+        y: 768
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -866,15 +868,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_26
+      name: Torch_Red_5
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
+        x: 960
+        y: 768
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -887,15 +889,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_27
+      name: Torch_Red_6
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
+        x: 1152
+        y: 768
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -908,15 +910,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_28
+      name: Torch_Red_7
       rect:
         serializedVersion: 2
-        x: 576
-        y: 0
+        x: 0
+        y: 576
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -929,15 +931,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_29
+      name: Torch_Red_8
       rect:
         serializedVersion: 2
-        x: 768
-        y: 0
+        x: 192
+        y: 576
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -950,15 +952,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Torch_Red_30
+      name: Torch_Red_9
       rect:
         serializedVersion: 2
-        x: 960
-        y: 0
+        x: 384
+        y: 576
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -983,35 +985,35 @@ TextureImporter:
     nameFileIdTable:
       Torch_Red_0: -4230181108591323607
       Torch_Red_1: 1276301746398581189
-      Torch_Red_10: -7250923013278643159
-      Torch_Red_11: -759784588031407353
-      Torch_Red_12: -462455619930006344
-      Torch_Red_13: -4045980632669398402
-      Torch_Red_14: 2400894962720278677
-      Torch_Red_15: 3118926007335269732
-      Torch_Red_16: 9113646813091510599
-      Torch_Red_17: 6248227852262120436
-      Torch_Red_18: 6084245027050260555
-      Torch_Red_19: -2997398667913583680
-      Torch_Red_2: 8474622326328232153
-      Torch_Red_20: -5878108617965649021
-      Torch_Red_21: 4362545556120400592
-      Torch_Red_22: 5867112988911455960
-      Torch_Red_23: -2701350933335208944
-      Torch_Red_24: -6788512504216807580
-      Torch_Red_25: -6152072047719948750
-      Torch_Red_26: -7947289817204367736
-      Torch_Red_27: 6443348011037700053
-      Torch_Red_28: -4146183439964304651
-      Torch_Red_29: 9055524857887277902
-      Torch_Red_3: -4071349217737685964
-      Torch_Red_30: 8493538717480454915
-      Torch_Red_4: -7369122931189845133
-      Torch_Red_5: 914313290774012156
-      Torch_Red_6: -7114989445226215597
-      Torch_Red_7: 7099923657110077353
-      Torch_Red_8: -1649346297522608045
-      Torch_Red_9: -7044588005900942876
+      Torch_Red_10: 8474622326328232153
+      Torch_Red_11: -4071349217737685964
+      Torch_Red_12: -7369122931189845133
+      Torch_Red_13: 914313290774012156
+      Torch_Red_14: -7114989445226215597
+      Torch_Red_15: 7099923657110077353
+      Torch_Red_16: -1649346297522608045
+      Torch_Red_17: -7044588005900942876
+      Torch_Red_18: -7250923013278643159
+      Torch_Red_19: -759784588031407353
+      Torch_Red_2: -462455619930006344
+      Torch_Red_20: -4045980632669398402
+      Torch_Red_21: 2400894962720278677
+      Torch_Red_22: 3118926007335269732
+      Torch_Red_23: 9113646813091510599
+      Torch_Red_24: 6248227852262120436
+      Torch_Red_25: 6084245027050260555
+      Torch_Red_26: -2997398667913583680
+      Torch_Red_27: -5878108617965649021
+      Torch_Red_28: 4362545556120400592
+      Torch_Red_29: 5867112988911455960
+      Torch_Red_3: -2701350933335208944
+      Torch_Red_30: -6788512504216807580
+      Torch_Red_4: -6152072047719948750
+      Torch_Red_5: -7947289817204367736
+      Torch_Red_6: 6443348011037700053
+      Torch_Red_7: -4146183439964304651
+      Torch_Red_8: 9055524857887277902
+      Torch_Red_9: 8493538717480454915
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
