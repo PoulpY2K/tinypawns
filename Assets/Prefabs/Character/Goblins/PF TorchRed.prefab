@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: -1259183275419421846}
   - component: {fileID: -8381833077372393559}
   - component: {fileID: -4492252083134287827}
-  - component: {fileID: -704496355646947141}
+  - component: {fileID: 1684524073442937927}
   m_Layer: 6
-  m_Name: PF GoblinRed
+  m_Name: PF TorchRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,7 +140,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 10
+  m_LinearDrag: 15
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -176,7 +176,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-704496355646947141
+--- !u!114 &1684524073442937927
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,3 +188,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1850fe703a2da5a45909cb765ddd3168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 3

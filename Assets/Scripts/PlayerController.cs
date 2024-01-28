@@ -37,20 +37,22 @@ public class PlayerController : MonoBehaviour
         {
             forceToApply = Vector2.zero;
         }
-
+        
         _rb.velocity = moveForce;
-
         UpdateDirectionAnimation(moveForce);
     }
 
     private void UpdateDirectionAnimation(Vector2 movement)
     {
-        _sr.flipX = movement.x switch
+        if (movement.x > 0)
         {
-            > 0 => false,
-            < 0 => true,
-            _ => _sr.flipX
-        };
+            _sr.flipX = false;
+            gameObject.BroadcastMessage("IsFacingRight", true);
+        } else if (movement.x < 0)
+        {
+            _sr.flipX = true;
+            gameObject.BroadcastMessage("IsFacingRight", false);
+        }
     }
 
     private void OnFire()
