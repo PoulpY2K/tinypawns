@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using Interfaces;
 using UnityEngine;
 
-public class WeaponHitbox : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
-    public float weaponDamage = 1f;
+    [Header("Weapon Parameters")] public float weaponDamage = 1f;
     public float knockbackForce = 15f;
 
-    public Collider2D hitbox;
+    [Header("Weapon Hitbox")] public Collider2D hitbox;
 
     private void Start()
     {
@@ -19,18 +19,14 @@ public class WeaponHitbox : MonoBehaviour
         }
     }
 
-    // Vérifie la présence du rigibody d'un ennemi et envoie les dommages au GameObject
+    // Vérifie la présence du rigibody d'un ennemi et envoie les dégâts au GameObject
     private void OnTriggerEnter2D(Collider2D col)
     {
         var damageableObject = col.GetComponent<IDamageable>();
 
         if (damageableObject != null)
         {
-            // Calcule la direction entre le personnage et la cible
-            var parentPosition = transform.parent.position;
-
-            var direction = (Vector2)(col.transform.position - parentPosition).normalized;
-            var knockback = direction * knockbackForce;
+            var knockback = GetKnockbackDirection(col);
 
             damageableObject.OnHit(weaponDamage, knockback);
         }
@@ -54,5 +50,14 @@ public class WeaponHitbox : MonoBehaviour
 
         go.transform.localPosition = pos;
         go.transform.localScale = scale;
+    }
+
+    private Vector2 GetKnockbackDirection(Collider2D col)
+    {
+        // Calcule la direction entre le personnage et la cible
+        var parentPosition = transform.parent.position;
+
+        var direction = (Vector2)(col.transform.position - parentPosition).normalized;
+        return direction * knockbackForce;
     }
 }

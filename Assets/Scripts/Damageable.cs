@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using Interfaces;
 using TMPro;
 using UnityEngine;
@@ -12,13 +13,14 @@ public class Damageable : MonoBehaviour, IDamageable
     private Collider2D _collider;
     private float _invincibleTimerElapsed = 0f;
 
-    public TextMeshProUGUI damageText;
-    public float invicibilityTime = 0.5f;
-    public bool canTurnInvicible;
-    public float health = 3;
+    [Header("Entity Parameters")] public float health = 3;
     public bool targetable = true;
     public bool disableSimulationOnDeath = false;
+    public bool canTurnInvicible;
     public bool invincible;
+    public float invicibilityTime = 0.5f;
+
+    [Header("Text Reference")] public TextMeshProUGUI damageText;
 
     private static readonly int Hit = Animator.StringToHash("Hit");
     private static readonly int Death = Animator.StringToHash("Death");
@@ -31,20 +33,8 @@ public class Damageable : MonoBehaviour, IDamageable
             if (value < health)
             {
                 _animator.SetTrigger(Hit);
-                var textRectTransform = Instantiate(damageText).GetComponent<RectTransform>();
-                var pos = textRectTransform.transform.position;
 
-                if (Camera.main)
-                {
-                    pos = Camera.main.WorldToScreenPoint(gameObject.transform.position);
-                }
-
-                // Remonte le texte par rapport au pivot des personnages pour qu'il soit au dessus de leurs têtes
-                pos.y += 100f;
-
-                textRectTransform.transform.position = pos;
-                var canvas = FindFirstObjectByType<Canvas>();
-                textRectTransform.transform.SetParent(canvas.transform);
+                ShowDamageOnScreen(health - value);
             }
 
             health = value;
@@ -126,11 +116,6 @@ public class Damageable : MonoBehaviour, IDamageable
         HandleInvincibility();
     }
 
-    public void DestroySelf()
-    {
-        Destroy(gameObject);
-    }
-
     private void HandleInvincibility()
     {
         if (canTurnInvicible)
@@ -138,5 +123,29 @@ public class Damageable : MonoBehaviour, IDamageable
             // Active l'invincibilité
             Invicible = true;
         }
+    }
+
+    private void ShowDamageOnScreen(float value)
+    {
+        var textRectTransform = Instantiate(damageText).GetComponent<RectTransform>();
+        textRectTransform.gameObject.GetComponent<TextMeshProUGUI>().text = value.ToString();
+        var pos = textRectTransform.transform.position;
+
+        if (Camera.main)
+        {
+            pos = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+        }
+
+        // Remonte le texte par rapport au pivot des personnages pour qu'il soit au dessus de leurs têtes
+        pos.y += 100f;
+
+        textRectTransform.transform.position = pos;
+        var canvas = FindFirstObjectByType<Canvas>();
+        textRectTransform.transform.SetParent(canvas.transform);
+    }
+
+    public void DestroySelf()
+    {
+        Destroy(gameObject);
     }
 }

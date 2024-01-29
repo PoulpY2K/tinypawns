@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace Interfaces
 {
+    // Interface des propriétés et méthodes pour la classe Damageable
     public interface IDamageable
     {
         public float Health { set; get; }

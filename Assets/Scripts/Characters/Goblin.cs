@@ -8,10 +8,10 @@ namespace Characters
 {
     public class Goblin : MonoBehaviour
     {
-        public float damage = 1f;
+        [Header("Goblin Parameters")] public float damage = 1f;
         public float knockbackForce = 10f;
-        public Detection detectionZone;
         [Range(1f, 100f)] public float moveSpeed = 15f;
+        public Detection detectionZone;
 
         private Rigidbody2D _rb;
         private Animator _animator;
@@ -50,7 +50,7 @@ namespace Characters
                 _animator.SetBool(IsMoving, false);
             }
         }
-        
+
         private void UpdateDirectionAnimation(Vector2 direction)
         {
             _sr.flipX = direction.x switch

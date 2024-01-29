@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    //let camera follow target
+    // Permet à la caméra de suivre la cible
+    [Header("Camera Parameters")]
     public Transform target;
     public float lerpSpeed = 1.0f;
 
@@ -16,7 +17,7 @@ public class CameraFollow : MonoBehaviour
         _offset = transform.position - target.position;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (!target) return;
 

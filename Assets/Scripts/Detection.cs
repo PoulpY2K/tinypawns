@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class Detection : MonoBehaviour
 {
+    [Header("Detection Parameters")]
     public string targetTag = "Player";
     public List<Collider2D> detectedColliders = new List<Collider2D>();
-    public Collider2D col;
 
     // When gets in range
     private void OnTriggerEnter2D(Collider2D pCol)

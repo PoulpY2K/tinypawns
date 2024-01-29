@@ -9,9 +9,9 @@ namespace Characters
     {
         public float Health { get; set; }
         public bool Targetable { get; set; }
-        
         public float health = 3;
         public bool targetable = true;
+        
         public void OnHit(float damage, Vector2 knockback)
         {
             throw new System.NotImplementedException();
