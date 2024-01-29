@@ -9,12 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3453674081726694643}
+  - component: {fileID: -4074458296562445341}
   - component: {fileID: 3399887366791341721}
   - component: {fileID: 6126969123396190945}
   - component: {fileID: 7998535625052248935}
   m_Layer: 0
   m_Name: PF Tree
-  m_TagString: Untagged
+  m_TagString: Resource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,6 +35,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4074458296562445341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484401541711001714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06138db63b049a74683da075cc3b31d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  targetable: 1
+  disableSimulationOnDeath: 0
+  canTurnInvicible: 0
+  invincible: 0
+  invicibilityTime: 0.5
+  damageText: {fileID: 0}
 --- !u!212 &3399887366791341721
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -156,8 +176,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.19749862, y: -0.025341805}
-      - {x: 0.15213262, y: -0.025348976}
+    - - {x: -0.1795064, y: 0.06975988}
+      - {x: 0.15470295, y: 0.06975271}
       - {x: 0.21557897, y: -0.11126307}
       - {x: 0.10485335, y: -0.17005754}
       - {x: -0.047708333, y: -0.19414815}

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Interfaces
+namespace Entity.Interfaces
 {
     // Interface des propriétés et méthodes pour la classe Damageable
     public interface IDamageable

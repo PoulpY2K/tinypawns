@@ -1,17 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Interfaces;
+using Entity.Interfaces;
 using UnityEngine;
 
-namespace Characters
+namespace Entity.Enemies.Characters
 {
     public class Goblin : MonoBehaviour
     {
         [Header("Goblin Parameters")] public float damage = 1f;
         public float knockbackForce = 10f;
         [Range(1f, 100f)] public float moveSpeed = 15f;
-        public Detection detectionZone;
+        public EntityDetection detectionZone;
 
         private Rigidbody2D _rb;
         private Animator _animator;
