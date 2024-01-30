@@ -9,12 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3453674081726694643}
-  - component: {fileID: -4074458296562445341}
+  - component: {fileID: 5214266931256463676}
   - component: {fileID: 3399887366791341721}
-  - component: {fileID: 6126969123396190945}
   - component: {fileID: 7998535625052248935}
   m_Layer: 7
-  m_Name: PF Tree
+  m_Name: PF Mine
   m_TagString: Resource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,10 +31,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1875030611035976740}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-4074458296562445341
+--- !u!114 &5214266931256463676
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,19 +44,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 484401541711001714}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06138db63b049a74683da075cc3b31d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 7464b69ef48ef474283d7a2d0ab8ce65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  targetable: 1
-  disableSimulationOnDeath: 0
-  canTurnInvicible: 0
-  invincible: 0
-  invicibilityTime: 0.5
-  lootSpawnRange: 1
-  hitText: {fileID: 0}
-  loot: {fileID: 3264810675806180246, guid: f038cb3dc46454676933693a5a904cbd, type: 3}
-  lootContainer: {fileID: 0}
+  detectionZone: {fileID: 5829657496789773642}
 --- !u!212 &3399887366791341721
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -100,7 +91,7 @@ SpriteRenderer:
   m_SortingLayerID: 839049485
   m_SortingLayer: 2
   m_SortingOrder: 3
-  m_Sprite: {fileID: -7825026170427690390, guid: ce6c0881f339c1d48ac85eda8594c62a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5fdf7830767d9eb489801c531f0d6fc3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -111,28 +102,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!95 &6126969123396190945
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 484401541711001714}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 26d3079e18279114a96e55154995cc7a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!60 &7998535625052248935
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -170,8 +139,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.1}
-    oldSize: {x: 1.734375, y: 2.71875}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3, y: 2}
     newSize: {x: 1.734375, y: 2.71875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -179,11 +148,96 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.1795064, y: 0.06975988}
-      - {x: 0.15470295, y: 0.06975271}
-      - {x: 0.21557897, y: -0.11126307}
-      - {x: 0.10485335, y: -0.17005754}
-      - {x: -0.047708333, y: -0.19414815}
-      - {x: -0.19629364, y: -0.16775146}
-      - {x: -0.26379675, y: -0.067290634}
+    - - {x: 0.39572784, y: -0.44358194}
+      - {x: -0.57008934, y: -0.45082757}
+      - {x: -1.2001773, y: -0.3395244}
+      - {x: -1.1009865, y: 0.07710677}
+      - {x: -0.97204447, y: 0.3}
+      - {x: 0.97204447, y: 0.3}
+      - {x: 1.1283481, y: 0.027426917}
+      - {x: 1.1974478, y: -0.33548808}
   m_UseDelaunayMesh: 0
+--- !u!1 &6183733018512012426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1875030611035976740}
+  - component: {fileID: 3211016407432013879}
+  - component: {fileID: 5829657496789773642}
+  m_Layer: 7
+  m_Name: DetectionZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1875030611035976740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6183733018512012426}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3453674081726694643}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &3211016407432013879
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6183733018512012426}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 3.5, y: 2.5}
+  m_Direction: 1
+--- !u!114 &5829657496789773642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6183733018512012426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af71fba211c8b314593843cded5c17ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Player
+  detectedColliders: []

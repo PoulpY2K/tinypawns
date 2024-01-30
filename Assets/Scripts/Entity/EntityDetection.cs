@@ -13,12 +13,13 @@ namespace Entity
         // When gets in range
         private void OnTriggerEnter2D(Collider2D pCol)
         {
+            Debug.Log("EnterTrigger");
             if (pCol.gameObject.CompareTag(targetTag))
             {
                 detectedColliders.Add(pCol);
             }
         }
-
+        
         // When goes out of range
         private void OnTriggerExit2D(Collider2D pCol)
         {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Entity.Interfaces;
 using UnityEngine;
 
-namespace Entity.Enemies.Characters
+namespace Entity.Enemies
 {
     public class Goblin : MonoBehaviour
     {
