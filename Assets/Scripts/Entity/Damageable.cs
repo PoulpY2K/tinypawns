@@ -5,6 +5,7 @@ using System.Globalization;
 using Entity.Interfaces;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Entity
 {
@@ -21,11 +22,15 @@ namespace Entity
         public bool canTurnInvicible;
         public bool invincible;
         public float invicibilityTime = 0.5f;
+        public float lootSpawnRange = 1f;
 
-        [Header("Text Reference")] public TextMeshProUGUI damageText;
+        [Header("References")] public TextMeshProUGUI hitText;
+        public Lootable loot;
+        public GameObject lootContainer;
 
         private static readonly int Hit = Animator.StringToHash("Hit");
         private static readonly int Death = Animator.StringToHash("Death");
+        private static readonly int Spawn = Animator.StringToHash("Spawn");
 
         public float Health
         {
@@ -39,6 +44,10 @@ namespace Entity
                     if (!gameObject.CompareTag("Resource"))
                     {
                         ShowDamageOnScreen(health - value);
+                    }
+                    else
+                    {
+                        InstantiateLoot();
                     }
                 }
 
@@ -61,8 +70,9 @@ namespace Entity
                 if (disableSimulationOnDeath)
                 {
                     _rb.simulated = value;
-                    _collider.enabled = value;
                 }
+
+                _collider.enabled = value;
             }
         }
 
@@ -115,8 +125,17 @@ namespace Entity
             if (Invicible) return;
 
             Health -= pDamage;
-            Debug.Log(Health);
             HandleInvincibility();
+        }
+
+        public void InstantiateLoot()
+        {
+            var lootPos = gameObject.transform.position;
+            lootPos.x += Random.Range(-lootSpawnRange, lootSpawnRange);
+            lootPos.y += Random.Range(-lootSpawnRange, lootSpawnRange);
+            
+            var lootInstance = Instantiate(loot, lootPos, Quaternion.identity, lootContainer.transform);
+            lootInstance.GetComponent<Animator>().SetTrigger(Spawn);
         }
 
         private void HandleInvincibility()
@@ -130,7 +149,7 @@ namespace Entity
 
         private void ShowDamageOnScreen(float value)
         {
-            var textRectTransform = Instantiate(damageText).GetComponent<RectTransform>();
+            var textRectTransform = Instantiate(hitText).GetComponent<RectTransform>();
             textRectTransform.gameObject.GetComponent<TextMeshProUGUI>().text = value.ToString();
             var pos = textRectTransform.transform.position;
 

@@ -83,7 +83,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTag: Player
   detectedColliders: []
-  col: {fileID: 86614804041518112}
 --- !u!1 &8851022910370282709
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,8 +135,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   knockbackForce: 10
-  detectionZone: {fileID: 6118535463961811319}
   moveSpeed: 20
+  detectionZone: {fileID: 6118535463961811319}
 --- !u!114 &-1318587337826617448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,13 +149,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06138db63b049a74683da075cc3b31d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageText: {fileID: 5160744468520994640, guid: f166b8025b4d26043902e6c30074a357, type: 3}
-  invicibilityTime: 0.5
-  canTurnInvicible: 0
   health: 3
   targetable: 1
   disableSimulationOnDeath: 1
+  canTurnInvicible: 0
   invincible: 0
+  invicibilityTime: 0.5
+  lootSpawnRange: 1
+  hitText: {fileID: 5160744468520994640, guid: f166b8025b4d26043902e6c30074a357, type: 3}
+  loot: {fileID: 0}
+  container: {fileID: 0}
 --- !u!212 &7822745119126289630
 SpriteRenderer:
   m_ObjectHideFlags: 0
