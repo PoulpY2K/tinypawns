@@ -1,13 +1,17 @@
+using Map;
 using UnityEngine;
 
 namespace Entity
 {
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(Animator))]
+    [RequireComponent(typeof(SpriteRenderer))]
     public class PlayerController : MonoBehaviour
     {
-        [Header("Layers")] [Range(1f, 100f)] public float moveSpeed = 30f;
-        [Range(1f, 3f)] public float forceDamping = 1.2f;
+        [Header("Player Parameters")] [Range(1f, 100f)]
+        public float moveSpeed = 30f;
+
+        [Header("Icons")] public GameObject interactIcon;
 
         private Rigidbody2D _rb;
         private Animator _animator;
@@ -15,9 +19,12 @@ namespace Entity
         private Vector2 _forceToApply;
         private Vector2 _playerInput;
         private Weapon _weapon;
+        private Vector2 _oldPosition;
+        private bool _isInteracting;
 
         private static readonly int IsMoving = Animator.StringToHash("IsMoving");
         private static readonly int Attack = Animator.StringToHash("Attack");
+        private static readonly int Pressed = Animator.StringToHash("Pressed");
 
         private void Awake()
         {
@@ -25,6 +32,7 @@ namespace Entity
             _animator = GetComponent<Animator>();
             _sr = GetComponent<SpriteRenderer>();
             _weapon = GetComponentInChildren<Weapon>();
+            interactIcon.SetActive(false);
         }
 
         private void Update()
@@ -49,12 +57,6 @@ namespace Entity
         {
             var moveForce = _playerInput * moveSpeed;
             moveForce += _forceToApply;
-            _forceToApply /= forceDamping;
-            if (Mathf.Abs(_forceToApply.x) <= 0.01f && Mathf.Abs(_forceToApply.y) <= 0.01f)
-            {
-                _forceToApply = Vector2.zero;
-            }
-
             return moveForce;
         }
 
@@ -85,6 +87,59 @@ namespace Entity
         private void OnFire()
         {
             _animator.SetTrigger(Attack);
+        }
+
+        public void ShowInteractIcon()
+        {
+            interactIcon.SetActive(true);
+        }
+
+        public void HideInteractIcon()
+        {
+            interactIcon.SetActive(false);
+        }
+
+        private void OnInteract()
+        {
+            var hits = Physics2D.BoxCastAll(transform.position, new Vector2(1f, 0.1f), 0, Vector2.zero);
+            if (hits.Length <= 0) return;
+
+            foreach (var hit in hits)
+            {
+                hit.transform.TryGetComponent<Structure>(out var i);
+                if (i && !_isInteracting)
+                {
+                    if (i.Destroyed)
+                        return;
+
+                    interactIcon.GetComponent<Animator>().SetTrigger(Pressed);
+                    _sr.enabled = false;
+                    _rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                    _oldPosition = gameObject.transform.position;
+                    gameObject.transform.position = i.transform.position;
+                    _isInteracting = true;
+
+                    i.Interact();
+                    return;
+                }
+
+                if (i && _isInteracting)
+                {
+                    interactIcon.GetComponent<Animator>().SetTrigger(Pressed);
+                    _sr.enabled = true;
+                    gameObject.transform.position = _oldPosition;
+                    _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+                    _isInteracting = false;
+
+                    i.Interact();
+                    if (i.Destroyed)
+                    {
+                        HideInteractIcon();
+                    }
+
+                    return;
+                }
+            }
         }
     }
 }

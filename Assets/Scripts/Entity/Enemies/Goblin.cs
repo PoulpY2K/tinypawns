@@ -11,7 +11,7 @@ namespace Entity.Enemies
         [Header("Goblin Parameters")] public float damage = 1f;
         public float knockbackForce = 10f;
         [Range(1f, 100f)] public float moveSpeed = 15f;
-        public EntityDetection detectionZone;
+        public Detection detectionZone;
 
         private Rigidbody2D _rb;
         private Animator _animator;

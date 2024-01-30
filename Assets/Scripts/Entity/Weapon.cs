@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace Entity
 {
+    [RequireComponent(typeof(Collider2D))]
     public class Weapon : MonoBehaviour
     {
         [Header("Weapon Parameters")] public float weaponDamage = 1f;
@@ -17,7 +18,7 @@ namespace Entity
         {
             if (hitbox == null)
             {
-                Debug.LogError("Weapon Collider is not set");
+                Debug.LogError("Weapon Collider is not set from " + gameObject.name);
             }
         }
 

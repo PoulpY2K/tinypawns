@@ -9,6 +9,8 @@ using Random = UnityEngine.Random;
 
 namespace Entity
 {
+    [RequireComponent(typeof(Animator))]
+    [RequireComponent(typeof(Collider2D))]
     public class Damageable : MonoBehaviour, IDamageable
     {
         private Animator _animator;

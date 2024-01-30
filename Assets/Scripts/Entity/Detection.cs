@@ -1,19 +1,22 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Entity
 {
-    public class EntityDetection : MonoBehaviour
+    [RequireComponent(typeof(Collider2D))]
+    public class Detection : MonoBehaviour
     {
         [Header("Detection Parameters")] public string targetTag = "Player";
         public List<Collider2D> detectedColliders = new();
 
+        private void Reset()
+        {
+            GetComponent<Collider2D>().isTrigger = true;
+        }
+        
         // When gets in range
         private void OnTriggerEnter2D(Collider2D pCol)
         {
-            Debug.Log("EnterTrigger");
             if (pCol.gameObject.CompareTag(targetTag))
             {
                 detectedColliders.Add(pCol);
