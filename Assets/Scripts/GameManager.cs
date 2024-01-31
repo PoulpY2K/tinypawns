@@ -1,12 +1,15 @@
-using System;
 using UnityEngine;
 
+[RequireComponent(typeof(CameraManager))]
+[RequireComponent(typeof(InventoryManager))]
+[RequireComponent(typeof(UIManager))]
 public class GameManager : MonoBehaviour
 {
     // Singleton pattern
     public static GameManager Instance { get; private set; }
     public CameraManager CameraManager { get; private set; }
     public InventoryManager InventoryManager { get; private set; }
+    public UIManager UIManager { get; private set; }
 
     private void Awake()
     {
@@ -15,17 +18,20 @@ public class GameManager : MonoBehaviour
 
         CameraManager = GetComponent<CameraManager>();
         InventoryManager = GetComponent<InventoryManager>();
+        UIManager = GetComponent<UIManager>();
     }
 
-    private void Start()
+    public void StartGame()
     {
         CameraManager.StartGame();
+        UIManager.StartGame();
         InventoryManager.StartGame();
     }
 
-    public void Stop()
+    public void StopGame()
     {
         CameraManager.StopGame();
+        UIManager.StopGame();
         InventoryManager.StopGame();
     }
 }

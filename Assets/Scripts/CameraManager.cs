@@ -18,6 +18,7 @@ public class CameraManager : MonoBehaviour
     private void Awake()
     {
         _gm = GameManager.Instance;
+        _running = false;
     }
 
     public void StartGame()

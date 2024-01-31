@@ -44,7 +44,7 @@ namespace Entity
 
                     if (!gameObject.CompareTag("Resource"))
                     {
-                        ShowDamageOnScreen(health - value);
+                        //ShowDamageOnScreen(health - value);
                     }
                     else
                     {
