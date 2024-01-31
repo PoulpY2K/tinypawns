@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Globalization;
 using Entity.Interfaces;
 using TMPro;
 using UnityEngine;
@@ -11,11 +7,13 @@ namespace Entity
 {
     [RequireComponent(typeof(Animator))]
     [RequireComponent(typeof(Collider2D))]
+    [RequireComponent(typeof(SpriteRenderer))]
     public class Damageable : MonoBehaviour, IDamageable
     {
         private Animator _animator;
         private Rigidbody2D _rb;
         private Collider2D _collider;
+        private SpriteRenderer _sr;
         private float _invincibleTimerElapsed = 0f;
 
         [Header("Entity Parameters")] public float health = 3;
@@ -24,7 +22,8 @@ namespace Entity
         public bool canTurnInvicible;
         public bool invincible;
         public float invicibilityTime = 0.5f;
-        public float lootSpawnRange = 1f;
+        public float lootSpawnRangeX = 1f;
+        public float lootSpawnRangeY = 0.5f;
 
         [Header("References")] public TextMeshProUGUI hitText;
         public Lootable loot;
@@ -96,6 +95,7 @@ namespace Entity
             _animator = GetComponent<Animator>();
             _rb = GetComponent<Rigidbody2D>();
             _collider = GetComponent<Collider2D>();
+            _sr = GetComponent<SpriteRenderer>();
         }
 
         private void FixedUpdate()
@@ -133,10 +133,12 @@ namespace Entity
         public void InstantiateLoot()
         {
             var lootPos = gameObject.transform.position;
-            lootPos.x += Random.Range(-lootSpawnRange, lootSpawnRange);
-            lootPos.y += Random.Range(-lootSpawnRange, lootSpawnRange);
-            
+            lootPos.x += Random.Range(-lootSpawnRangeX, lootSpawnRangeX);
+            lootPos.y -= lootSpawnRangeY + Random.Range(0, lootSpawnRangeY);
+
             var lootInstance = Instantiate(loot, lootPos, Quaternion.identity, lootContainer.transform);
+            lootInstance.GetComponent<SpriteRenderer>().sortingLayerName = _sr.sortingLayerName;
+            lootInstance.transform.gameObject.layer = gameObject.layer;
             lootInstance.GetComponent<Animator>().SetTrigger(Spawn);
         }
 

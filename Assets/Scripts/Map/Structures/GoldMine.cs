@@ -72,6 +72,8 @@ namespace Map.Structures
             lootPos.y -= lootSpawnRangeY;
 
             var lootInstance = Instantiate(loot, lootPos, Quaternion.identity, lootContainer.transform);
+            lootInstance.GetComponent<SpriteRenderer>().sortingLayerName = _sr.sortingLayerName;
+            lootInstance.transform.gameObject.layer = gameObject.layer;
             lootInstance.GetComponent<Animator>().SetTrigger(Spawn);
         }
     }

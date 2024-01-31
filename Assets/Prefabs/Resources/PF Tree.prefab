@@ -53,7 +53,8 @@ MonoBehaviour:
   canTurnInvicible: 0
   invincible: 0
   invicibilityTime: 0.5
-  lootSpawnRange: 1
+  lootSpawnRangeX: 1
+  lootSpawnRangeY: 0.3
   hitText: {fileID: 0}
   loot: {fileID: 3264810675806180246, guid: f038cb3dc46454676933693a5a904cbd, type: 3}
   lootContainer: {fileID: 0}

@@ -104,7 +104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4570258610051039613
 Transform:
   m_ObjectHideFlags: 0
@@ -155,7 +155,8 @@ MonoBehaviour:
   canTurnInvicible: 0
   invincible: 0
   invicibilityTime: 0.5
-  lootSpawnRange: 1
+  lootSpawnRangeX: 1
+  lootSpawnRangeY: 0.5
   hitText: {fileID: 5160744468520994640, guid: f166b8025b4d26043902e6c30074a357, type: 3}
   loot: {fileID: 0}
   lootContainer: {fileID: 0}
